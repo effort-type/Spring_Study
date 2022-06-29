@@ -1,7 +1,5 @@
 package hello.hellospring.controller;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,11 +49,17 @@ public class HelloController {
         return hello; // 이전과는 다르게 객체를 반환, 출력되는 것은 json
     }
 
-    @Getter
-    @Setter
+
     static class Hello {
         private String name;
 
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 
 }
