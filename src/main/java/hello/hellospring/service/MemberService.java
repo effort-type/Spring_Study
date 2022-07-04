@@ -2,15 +2,19 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service // 스프링 컨테이너에 등록해주는 어노테이션
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     // new를 사용하지 않기 위해서 변경한 코드 + 같은 레파지토리를 테스트하기 위함
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
